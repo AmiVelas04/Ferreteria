@@ -1,0 +1,3 @@
+Usuario : ferreteria
+Clave: Sis_ferre_2020
+Base de datos: bdferreteria

@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F86CB0AD-ED48-40C5-83ED-FE4BFE37E402}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Ferre.My.MyApplication</StartupObject>
+    <RootNamespace>Ferre</RootNamespace>
+    <AssemblyName>Ferre</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Ferre.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Ferre.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.17\lib\net452\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySqlBackup, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlBackup.NET.2.2.0\lib\net461\MySqlBackup.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\Zstandard.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuscCli.Designer.vb">
+      <DependentUpon>BuscCli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscCli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clases\Conex.vb" />
+    <Compile Include="Clases\Conexion.vb" />
+    <Compile Include="Clases\Factura.vb" />
+    <Compile Include="Clases\Loguearse.vb" />
+    <Compile Include="Clases\producto.vb" />
+    <Compile Include="Clases\Usuario.vb" />
+    <Compile Include="Formularios\Respaldo.Designer.vb">
+      <DependentUpon>Respaldo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Respaldo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios.Designer.vb">
+      <DependentUpon>Usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetFactura.vb" />
+    <Compile Include="Reportes\DetVentasPeri.vb" />
+    <Compile Include="Reportes\EncFactura.vb" />
+    <Compile Include="Reportes\EncProd.vb" />
+    <Compile Include="Formularios\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Buscprod.Designer.vb">
+      <DependentUpon>Buscprod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Buscprod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Portada.Designer.vb">
+      <DependentUpon>Portada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Portada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ventas.Designer.vb">
+      <DependentUpon>Ventas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ventas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngCliente.Designer.vb">
+      <DependentUpon>IngCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IngCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ingreso.Designer.vb">
+      <DependentUpon>Ingreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ingreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IniSess.vb" />
+    <Compile Include="inprov.Designer.vb">
+      <DependentUpon>inprov.vb</DependentUpon>
+    </Compile>
+    <Compile Include="inprov.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModProd.Designer.vb">
+      <DependentUpon>ModProd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModProd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Principal.Designer.vb">
+      <DependentUpon>Principal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="productoAg.Designer.vb">
+      <DependentUpon>productoAg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="productoAg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\EncVentasPeri.vb" />
+    <Compile Include="Reportes\inventario.Designer.vb">
+      <DependentUpon>inventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\inventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Productos.vb" />
+    <Compile Include="Reportes\RepoAll.Designer.vb">
+      <DependentUpon>RepoAll.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RepoAll.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\VentaDet.vb" />
+    <Compile Include="Reportes\VentaEnc.vb" />
+    <Compile Include="Reportes\VerFactu.Designer.vb">
+      <DependentUpon>VerFactu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VerFactu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BuscCli.resx">
+      <DependentUpon>BuscCli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Buscprod.resx">
+      <DependentUpon>Buscprod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Portada.resx">
+      <DependentUpon>Portada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Respaldo.resx">
+      <DependentUpon>Respaldo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios.resx">
+      <DependentUpon>Usuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ventas.resx">
+      <DependentUpon>Ventas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngCliente.resx">
+      <DependentUpon>IngCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ingreso.resx">
+      <DependentUpon>Ingreso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inprov.resx">
+      <DependentUpon>inprov.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModProd.resx">
+      <DependentUpon>ModProd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="productoAg.resx">
+      <DependentUpon>productoAg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\inventario.resx">
+      <DependentUpon>inventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RepoAll.resx">
+      <DependentUpon>RepoAll.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\VentasD.rdlc" />
+    <EmbeddedResource Include="Reportes\VentasPeri.rdlc" />
+    <EmbeddedResource Include="Reportes\VerFactu.resx">
+      <DependentUpon>VerFactu.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\DetVentasd.datasource" />
+    <None Include="My Project\DataSources\DetVentasPeri.datasource" />
+    <None Include="My Project\DataSources\EncVentasd.datasource" />
+    <None Include="My Project\DataSources\EncVentasPeri.datasource" />
+    <None Include="My Project\DataSources\VentaDet.datasource" />
+    <None Include="My Project\DataSources\VentaEnc.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <EmbeddedResource Include="Reportes\Factura.rdlc" />
+    <EmbeddedResource Include="Reportes\Inventariorep.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Logo.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

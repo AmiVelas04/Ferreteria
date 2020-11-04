@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Ferre", "Ferre\Ferre.vbproj", "{F86CB0AD-ED48-40C5-83ED-FE4BFE37E402}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InstaFerre", "InstaFerre\InstaFerre.vdproj", "{6C425FE2-58BD-4456-B1C7-2D4F30AEBCAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F86CB0AD-ED48-40C5-83ED-FE4BFE37E402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F86CB0AD-ED48-40C5-83ED-FE4BFE37E402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F86CB0AD-ED48-40C5-83ED-FE4BFE37E402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F86CB0AD-ED48-40C5-83ED-FE4BFE37E402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C425FE2-58BD-4456-B1C7-2D4F30AEBCAC}.Debug|Any CPU.ActiveCfg = Debug
+		{6C425FE2-58BD-4456-B1C7-2D4F30AEBCAC}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

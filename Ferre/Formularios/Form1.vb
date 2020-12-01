@@ -53,6 +53,7 @@
         BtnCliente.Visible = True
         BtnReportes.Visible = True
         BtnRespaldo.Visible = True
+        BtnClientes.Visible = True
     End Sub
 
     Private Sub BtnCliente_Click(sender As Object, e As EventArgs) Handles BtnCliente.Click
@@ -63,5 +64,10 @@
     Private Sub BtnRespaldo_Click(sender As Object, e As EventArgs) Handles BtnRespaldo.Click
         Dim resp As New Respaldo
         resp.ShowDialog()
+    End Sub
+
+    Private Sub BtnClientes_Click(sender As Object, e As EventArgs) Handles BtnClientes.Click
+        Dim formu As New IngCliente
+        abrir_formu(formu)
     End Sub
 End Class

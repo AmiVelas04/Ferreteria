@@ -53,6 +53,7 @@ Partial Class Ventas
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtCC = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.CboCliente = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -162,7 +163,7 @@ Partial Class Ventas
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(634, 25)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(162, 30)
+        Me.Label9.Size = New System.Drawing.Size(160, 30)
         Me.Label9.TabIndex = 14
         Me.Label9.Text = "Total a pagar Q."
         '
@@ -299,6 +300,7 @@ Partial Class Ventas
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.CboCliente)
         Me.GroupBox1.Controls.Add(Me.TxtN)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -318,8 +320,7 @@ Partial Class Ventas
         '
         'TxtN
         '
-        Me.TxtN.Enabled = False
-        Me.TxtN.Location = New System.Drawing.Point(279, 45)
+        Me.TxtN.Location = New System.Drawing.Point(90, 53)
         Me.TxtN.Name = "TxtN"
         Me.TxtN.Size = New System.Drawing.Size(110, 29)
         Me.TxtN.TabIndex = 7
@@ -328,7 +329,7 @@ Partial Class Ventas
         '
         Me.Label11.AutoSize = True
         Me.Label11.Enabled = False
-        Me.Label11.Location = New System.Drawing.Point(207, 47)
+        Me.Label11.Location = New System.Drawing.Point(18, 55)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(34, 21)
         Me.Label11.TabIndex = 6
@@ -337,7 +338,7 @@ Partial Class Ventas
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(455, 53)
+        Me.Label3.Location = New System.Drawing.Point(557, 53)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 21)
         Me.Label3.TabIndex = 4
@@ -346,16 +347,17 @@ Partial Class Ventas
         'TxtCli
         '
         Me.TxtCli.Enabled = False
-        Me.TxtCli.Location = New System.Drawing.Point(279, 14)
+        Me.TxtCli.Location = New System.Drawing.Point(206, 52)
         Me.TxtCli.Name = "TxtCli"
         Me.TxtCli.Size = New System.Drawing.Size(180, 29)
         Me.TxtCli.TabIndex = 3
+        Me.TxtCli.Visible = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Enabled = False
-        Me.Label2.Location = New System.Drawing.Point(207, 16)
+        Me.Label2.Location = New System.Drawing.Point(18, 24)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 21)
         Me.Label2.TabIndex = 2
@@ -364,19 +366,29 @@ Partial Class Ventas
         'TxtCC
         '
         Me.TxtCC.Enabled = False
-        Me.TxtCC.Location = New System.Drawing.Point(80, 37)
+        Me.TxtCC.Location = New System.Drawing.Point(735, 30)
         Me.TxtCC.Name = "TxtCC"
         Me.TxtCC.Size = New System.Drawing.Size(90, 29)
         Me.TxtCC.TabIndex = 1
+        Me.TxtCC.Visible = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(16, 37)
+        Me.Label1.Location = New System.Drawing.Point(671, 30)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(60, 21)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Codigo"
+        Me.Label1.Visible = False
+        '
+        'CboCliente
+        '
+        Me.CboCliente.FormattingEnabled = True
+        Me.CboCliente.Location = New System.Drawing.Point(90, 18)
+        Me.CboCliente.Name = "CboCliente"
+        Me.CboCliente.Size = New System.Drawing.Size(296, 29)
+        Me.CboCliente.TabIndex = 8
         '
         'Ventas
         '
@@ -435,4 +447,5 @@ Partial Class Ventas
     Friend WithEvents TxtCC As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents CboProd As ComboBox
+    Friend WithEvents CboCliente As ComboBox
 End Class

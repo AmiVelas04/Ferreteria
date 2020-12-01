@@ -6,13 +6,14 @@ Public Class Ventas
 
     Dim prod As New producto
     Dim fact As New Factura
+    Dim cli As New Cliente
     Private Sub Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label3.Text = Label3.Text & " " & DateAndTime.DateString
 
         Me.Text = "Ventas " & "V. 1.0.19"
         TxtCod.Select()
         listarprod()
-        listarcli()
+        listacli()
 
     End Sub
     Private Sub listarprod()
@@ -29,6 +30,20 @@ Public Class Ventas
         CboProd.AutoCompleteCustomSource = produ
         CboProd.AutoCompleteMode = AutoCompleteMode.SuggestAppend
         CboProd.AutoCompleteSource = AutoCompleteSource.CustomSource
+    End Sub
+    Private Sub listacli()
+        Dim datos As New DataTable
+        datos = cli.listacli()
+        CboCliente.DataSource = datos
+        CboCliente.DisplayMember = "nombre"
+        CboCliente.ValueMember = "id_cli"
+        Dim clien As New AutoCompleteStringCollection
+        For Each fila As DataRow In datos.Rows
+            clien.add(fila("nombre").ToString)
+        Next
+        CboCliente.AutoCompleteCustomSource = clien
+        CboCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        CboCliente.AutoCompleteSource = AutoCompleteSource.CustomSource
     End Sub
     Private Sub listarcli()
         TxtCC.Text = "1"
@@ -176,6 +191,20 @@ Public Class Ventas
 
     'Factura
     Private Sub enlistarprod()
+
+        Dim idcli As Integer
+        If (CboCliente.SelectedValue = Nothing) Then
+            Dim valores(5) As String
+            valores(0) = CboCliente.Text
+            valores(1) = ""
+            valores(2) = TxtN.Text
+            valores(3) = ""
+            valores(4) = ""
+            idcli = cli.ingresarcliven(valores)
+        Else
+            idcli = Integer.Parse(CboCliente.SelectedValue.ToString)
+        End If
+
         Dim datos As New DataTable
         Dim cant As Integer = DgvProd.Rows.Count
         Dim cont As Integer
@@ -197,7 +226,7 @@ Public Class Ventas
             datos.Rows.Add(datar)
         Next
 
-        If fact.generarv(datos, TxtCC.Text, idven) Then
+        If fact.generarv(datos, idcli.ToString, idven) Then
             MessageBox.Show("Venta realizada correctamente", "Venta Hecha", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
             MessageBox.Show("No se pudo realizar la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)

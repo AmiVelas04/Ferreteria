@@ -122,7 +122,6 @@
     <Compile Include="BuscCli.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clases\Cliente.vb" />
     <Compile Include="Clases\Conex.vb" />
     <Compile Include="Clases\Conexion.vb" />
     <Compile Include="Clases\Factura.vb" />
@@ -182,10 +181,10 @@
     <Compile Include="Formularios\Ventas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\IngCliente.Designer.vb">
+    <Compile Include="IngCliente.Designer.vb">
       <DependentUpon>IngCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\IngCliente.vb">
+    <Compile Include="IngCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Ingreso.Designer.vb">
@@ -285,7 +284,7 @@
     <EmbeddedResource Include="Formularios\Ventas.resx">
       <DependentUpon>Ventas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\IngCliente.resx">
+    <EmbeddedResource Include="IngCliente.resx">
       <DependentUpon>IngCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Ingreso.resx">

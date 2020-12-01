@@ -34,7 +34,6 @@ Partial Class Form1
         Me.BtnMin = New System.Windows.Forms.Button()
         Me.BtnCerrar = New System.Windows.Forms.Button()
         Me.PanCent = New System.Windows.Forms.Panel()
-        Me.BtnClientes = New System.Windows.Forms.Button()
         Me.PanIz.SuspendLayout()
         Me.PanSup.SuspendLayout()
         Me.SuspendLayout()
@@ -42,7 +41,6 @@ Partial Class Form1
         'PanIz
         '
         Me.PanIz.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.PanIz.Controls.Add(Me.BtnClientes)
         Me.PanIz.Controls.Add(Me.BtnRespaldo)
         Me.PanIz.Controls.Add(Me.BtnCliente)
         Me.PanIz.Controls.Add(Me.BtnReportes)
@@ -197,23 +195,6 @@ Partial Class Form1
         Me.PanCent.Size = New System.Drawing.Size(843, 543)
         Me.PanCent.TabIndex = 2
         '
-        'BtnClientes
-        '
-        Me.BtnClientes.FlatAppearance.BorderSize = 0
-        Me.BtnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnClientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnClientes.ForeColor = System.Drawing.Color.White
-        Me.BtnClientes.Image = CType(resources.GetObject("BtnClientes.Image"), System.Drawing.Image)
-        Me.BtnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnClientes.Location = New System.Drawing.Point(12, 330)
-        Me.BtnClientes.Name = "BtnClientes"
-        Me.BtnClientes.Size = New System.Drawing.Size(145, 32)
-        Me.BtnClientes.TabIndex = 5
-        Me.BtnClientes.Text = "Clientes"
-        Me.BtnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnClientes.UseVisualStyleBackColor = True
-        Me.BtnClientes.Visible = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -245,5 +226,4 @@ Partial Class Form1
     Friend WithEvents LblUsu As Label
     Friend WithEvents BtnCliente As Button
     Friend WithEvents BtnRespaldo As Button
-    Friend WithEvents BtnClientes As Button
 End Class

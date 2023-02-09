@@ -6,6 +6,9 @@ Public Class VerFactu
         RpvFactura.LocalReport.DataSources.Clear()
         RpvFactura.LocalReport.DataSources.Add(New ReportDataSource("TituloFact", encabezado))
         RpvFactura.LocalReport.DataSources.Add(New ReportDataSource("Detalle", Detalle))
+        RpvFactura.SetDisplayMode(DisplayMode.PrintLayout)
+        RpvFactura.ZoomMode = ZoomMode.Percent
+        RpvFactura.ZoomPercent = 100
         Me.RpvFactura.RefreshReport()
     End Sub
 End Class

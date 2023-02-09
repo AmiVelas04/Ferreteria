@@ -15,6 +15,7 @@ Public Class RepoAll
     End Sub
 
     Private Sub BtnInventario_Click(sender As Object, e As EventArgs) Handles BtnInventario.Click
+        RpvReporte.LocalReport.DataSources.Clear()
         RpvReporte.Visible = True
         Dim titulo As New EncProd
         Dim datos As New DataTable
@@ -36,11 +37,10 @@ Public Class RepoAll
 
             titulo.detalle.Add(detprod)
         Next
+        titulo.Totalp = 0
         titulo.Totalp = totaltodo
         encabezadoInv.Add(titulo)
         detalleInv = titulo.detalle
-
-        RpvReporte.LocalReport.DataSources.Clear()
         RpvReporte.LocalReport.ReportPath = Application.StartupPath & "\..\..\Reportes\Inventariorep.rdlc"
         RpvReporte.LocalReport.DataSources.Add(New ReportDataSource("Prods", detalleInv))
         RpvReporte.LocalReport.DataSources.Add(New ReportDataSource("Totalp", encabezadoInv))

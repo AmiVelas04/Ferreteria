@@ -63,6 +63,7 @@ Partial Class VerFactu
         Me.Controls.Add(Me.RpvFactura)
         Me.Name = "VerFactu"
         Me.Text = "VerFactu"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DetFacturaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EncFacturaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

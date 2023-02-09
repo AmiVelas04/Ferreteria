@@ -65,7 +65,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -602,7 +601,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Sum(Fields!Totalp.Value, "Totalp")</Value>
+                <Value>=First(Fields!Totalp.Value,"Totalp")</Value>
                 <Style>
                   <FontFamily>Microsoft Sans Serif</FontFamily>
                   <FontWeight>Bold</FontWeight>

@@ -3,6 +3,7 @@ Public Class Factura
 
     Private conect As New Conexion
     Private prod As New producto
+    Dim cli As New Cliente
 
     Private Function buscar(ByVal consulta As String) As DataTable
         Dim datos As New DataTable
@@ -78,14 +79,14 @@ Public Class Factura
         'falta agregar cajero
         If (consulta_gen(consulta)) Then
 
-            Return generardet(datos, codv, cajero)
+            Return generardet(datos, codv, cajero, cliente, fecha)
         Else
             Return False
         End If
 
     End Function
 
-    Private Function generardet(ByVal datos As DataTable, ByVal venta As Integer, cajero As String) As Decimal
+    Private Function generardet(ByVal datos As DataTable, ByVal venta As Integer, cajero As String, ByVal idcli As String, ByVal fecha As String) As Decimal
 
         Dim cant As Integer = datos.Rows.Count
         Dim cont As Integer
@@ -105,20 +106,22 @@ Public Class Factura
             If (consulta_gen(consulta) = False Or prod.descontarProd(idprod, canti) = False) Then
                 Return False
             End If
-            ' total += Decimal.Parse(subT)
+            total += Decimal.Parse(subT)
         Next
         'total -= Decimal.Parse(descu)
-        Dim atendio As String
-        Dim usur As New DataTable
+        'Dim atendio As String
+        'Dim usur As New DataTable
         'usur = usu.buscusu(cajero)
         'atendio = usur.Rows[0][0].ToString()
         'Dim opera() As String = {"Ingreso", "Venta No " + venta + ",Operado por " + atendio, total.ToString(), DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"), "Activa"};
         ' caj.ingreope(opera);
-        If (MessageBox.Show("¿Desea imprimir comprobante de venta?", "¿Imprimir?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-            '   PrintTicket(venta, datos, efect, descu)
-        Else
+        'If (MessageBox.Show("¿Desea imprimir comprobante de venta?", "¿Imprimir?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+        'PrintTicket(venta, datos, efect, descu)
+        'Else
 
-        End If
+        'End If
+        imprimirFact(datos, venta, idcli, fecha)
+
         Return True
     End Function
 
@@ -149,5 +152,33 @@ Public Class Factura
                    "GROUP BY vd.ID_DETALLE"
         Return buscar(consulta)
     End Function
+
+    Private Sub imprimirFact(ByVal datos As DataTable, ByVal compro As Integer, ByVal idcli As String, ByVal fecha As String)
+        Dim enca As New EncFactura
+        enca.factura = compro
+        Dim datoscli As New DataTable
+        datoscli = cli.datoscli(idcli)
+        If datoscli.Rows.Count > 0 Then
+            enca.Cliente = datoscli.Rows(0)(0).ToString
+        End If
+        enca.fecha = fecha
+        Dim cant As Integer, cont As Integer
+        cant = datos.Rows.Count
+        For cont = 0 To cant - 1
+            Dim deta As New DetFactura
+            deta.codigo = datos.Rows(cont)(0).ToString
+            deta.producto = datos.Rows(cont)(1).ToString
+            deta.Marca = datos.Rows(cont)(2).ToString
+            deta.cantidad = Int32.Parse(datos.Rows(cont)(3).ToString)
+            deta.precio = Decimal.Parse(datos.Rows(cont)(4).ToString)
+            deta.total = Decimal.Parse(datos.Rows(cont)(5).ToString)
+            enca.detalle.Add(deta)
+        Next
+        Dim factu As New VerFactu
+        factu.Detalle = enca.detalle
+        factu.encabezado.Add(enca)
+        factu.Show()
+
+    End Sub
 
 End Class

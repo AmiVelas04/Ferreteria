@@ -95,6 +95,10 @@ Public Class Cliente
 
     End Function
 
-
+    Public Function datoscli(ByVal cod As String) As DataTable
+        Dim consulta As String
+        consulta = "Select Nombre,Direccion,Nit from clientes where id_cli=" & cod
+        Return buscar(consulta)
+    End Function
 
 End Class
